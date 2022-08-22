@@ -1,0 +1,18 @@
+{
+  "name": "brintell-desafio-backend",
+  "version": "1.0.0",
+  "description": "Brintell desafio backend",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Brintell",
+    "Desafio"
+  ],
+  "author": {
+    "name": "Rafiou Sitou",
+    "email": "rafiousitou90@gmail.com"
+  },
+  "license": "ISC"
+}
