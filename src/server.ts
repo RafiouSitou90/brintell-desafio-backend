@@ -1,7 +1,15 @@
 import express from "express"
 import cors from "cors"
+import { AppDataSource } from "./data-source"
+import "reflect-metadata"
 
 const APP_PORT = 3333
+
+AppDataSource.initialize()
+    .then(() => {
+        console.log("Data Source has been initialized successfully!")
+    })
+    .catch((err) => console.log(`Error during Data Source initialization : ${err}`))
 
 const app = express()
 
