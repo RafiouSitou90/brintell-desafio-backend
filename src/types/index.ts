@@ -1,0 +1,1 @@
+export { StudentCreation, StudentsStatistic } from "./StudentTypes"

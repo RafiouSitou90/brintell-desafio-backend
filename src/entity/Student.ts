@@ -16,6 +16,9 @@ export class Student {
     @Column("varchar", { unique: true, nullable: false, length: 150 })
     email: string
 
+    @Column("varchar", { unique: true, nullable: false, length: 14 })
+    cpf: string
+
     @Column("varchar", { name: "phone_number", length: 16, nullable: false })
     phoneNumber: string
 
