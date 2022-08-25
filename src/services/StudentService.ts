@@ -11,10 +11,15 @@ export class StudentService {
         return await repository.find()
     }
 
-    async create({ name, gender, phoneNumber, email }: StudentCreation): Promise<Student | Error> {
+    async create({ name, gender, phoneNumber, email, cpf }: StudentCreation): Promise<Student | Error> {
         const repository = AppDataSource.getRepository(Student)
 
         const emailLower: string = email.toLowerCase()
+        const cpfFormatted: string = cpf.replace(".", "")
+            .replace(".", "")
+            .replace("-", "")
+
+        console.log({cpfFormatted, cpf})
 
         if (await repository.findOneBy({email: emailLower})) {
             return new Error("Student already with this email.")
@@ -24,8 +29,12 @@ export class StudentService {
             return new Error("Student already with this phone number.")
         }
 
+        if (await repository.findOneBy({cpf: cpfFormatted}) || await repository.findOneBy({cpf})) {
+            return new Error("Student already with this cpf.")
+        }
+
         const student = repository.create({
-            name, email, gender, phoneNumber
+            name, email, gender, phoneNumber, cpf
         })
 
         await repository.save<Student>(student)

@@ -5,8 +5,8 @@ import { StudentService } from "../../services";
 export class StudentController {
     async create(request: Request, response: Response) {
         const service = new StudentService();
-        const { name, gender, phoneNumber, email } = request.body
-        const result = await service.create({name, gender, phoneNumber, email})
+        const { name, gender, phoneNumber, email, cpf } = request.body
+        const result = await service.create({name, gender, phoneNumber, email, cpf})
 
         if (result instanceof Error) {
             return response.status(400).json(result.message)

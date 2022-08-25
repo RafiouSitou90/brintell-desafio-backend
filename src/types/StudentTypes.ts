@@ -4,6 +4,7 @@ export type StudentCreation = {
     name: string
     gender: Gender
     email: string
+    cpf: string
     phoneNumber: string
 }
 
