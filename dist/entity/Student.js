@@ -14,19 +14,16 @@ const typeorm_1 = require("typeorm");
 const enums_1 = require("../enums");
 let Student = class Student {
     constructor() {
-        this.id = 0;
         this.name = "";
         this.cpf = "";
         this.email = "";
         this.gender = enums_1.Gender.UNKNOWN;
         this.phoneNumber = "";
-        this.createdAt = 0;
-        this.updatedAt = 0;
     }
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)("identity", { name: "id", type: "bigint", generatedIdentity: "ALWAYS" }),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Student.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)("varchar", { length: 200, nullable: false }),
@@ -51,12 +48,12 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)("datetime", { name: "created_at", nullable: false }),
     (0, typeorm_1.CreateDateColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Student.prototype, "createdAt", void 0);
 __decorate([
     (0, typeorm_1.Column)("datetime", { name: "updated_at", nullable: true, default: null }),
     (0, typeorm_1.UpdateDateColumn)({ default: null }),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Student.prototype, "updatedAt", void 0);
 Student = __decorate([
     (0, typeorm_1.Entity)({ name: "tab_students" }),

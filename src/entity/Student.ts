@@ -5,7 +5,7 @@ import {Gender} from "../enums";
 export class Student {
 
     @PrimaryGeneratedColumn("identity", { name: "id", type: "bigint", generatedIdentity: "ALWAYS" })
-    id: number
+    id: number | undefined
 
     @Column("varchar", { length: 200, nullable: false })
     name: string
@@ -24,20 +24,17 @@ export class Student {
 
     @Column("datetime", { name: "created_at", nullable: false })
     @CreateDateColumn()
-    createdAt: number
+    createdAt: number | undefined
 
     @Column("datetime", { name: "updated_at", nullable: true, default: null })
     @UpdateDateColumn({ default: null })
-    updatedAt: number
+    updatedAt: number | undefined
 
     constructor() {
-        this.id = 0
         this.name = ""
         this.cpf = ""
         this.email = ""
         this.gender = Gender.UNKNOWN
         this.phoneNumber = ""
-        this.createdAt = 0
-        this.updatedAt = 0
     }
 }
