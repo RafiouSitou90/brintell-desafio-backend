@@ -4,6 +4,7 @@
   "description": "Brintell desafio backend",
   "main": "server.ts",
   "scripts": {
+    "start": "ts-node --transpile-only src/server.ts",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm:cli": "ts-node-dev node_modules/typeorm/cli -d ./src/data-source.ts",
     "typeorm-generate": "npm run typeorm:cli migration:generate ./src/migrations -n"
