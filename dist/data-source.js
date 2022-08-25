@@ -23,5 +23,11 @@ exports.AppDataSource = new typeorm_1.DataSource({
     subscribers: [],
     migrations: [
         __dirname + "migrations/**/*.ts"
-    ]
+    ],
+    extra: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
 });
