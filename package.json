@@ -4,7 +4,7 @@
   "description": "Brintell desafio backend",
   "main": "server.ts",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "npx tsc -p .",
     "start": "node dist/server.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm:cli": "ts-node-dev node_modules/typeorm/cli -d ./src/data-source.ts",
