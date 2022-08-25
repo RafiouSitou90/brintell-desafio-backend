@@ -15,8 +15,8 @@ data_source_1.AppDataSource.initialize()
 })
     .catch((err) => console.log(`Error during Data Source initialization : ${err}`));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({ origin: "*", methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'] }));
 app.use(express_1.default.json());
+app.use((0, cors_1.default)({ origin: "*" }));
 app.use("/students", routes_1.StudentRoute);
 app.listen(APP_PORT, () => {
     console.log(`App starting and listening on http://localhost:${APP_PORT}`);
