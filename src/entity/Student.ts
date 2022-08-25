@@ -29,4 +29,15 @@ export class Student {
     @Column("datetime", { name: "updated_at", nullable: true, default: null })
     @UpdateDateColumn({ default: null })
     updatedAt: number
+
+    constructor() {
+        this.id = 0
+        this.name = ""
+        this.cpf = ""
+        this.email = ""
+        this.gender = Gender.UNKNOWN
+        this.phoneNumber = ""
+        this.createdAt = 0
+        this.updatedAt = 0
+    }
 }
