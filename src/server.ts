@@ -18,6 +18,6 @@ app.use(cors({origin: "*"}))
 
 app.use("/students", StudentRoute)
 
-app.listen(process.env.APP_SERVER_PORT || 3333, () => {
+app.listen(process.env.PORT || 3333, () => {
     console.log('App is running')
 })

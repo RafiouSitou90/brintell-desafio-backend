@@ -17,6 +17,6 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({ origin: "*" }));
 app.use("/students", routes_1.StudentRoute);
-app.listen(process.env.APP_SERVER_PORT || 3333, () => {
+app.listen(process.env.PORT || 3333, () => {
     console.log('App is running');
 });
