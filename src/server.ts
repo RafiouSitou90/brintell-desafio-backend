@@ -5,8 +5,6 @@ import "reflect-metadata"
 import { AppDataSource } from "./data-source"
 import { StudentRoute } from "./routes"
 
-const APP_PORT = 3333
-
 AppDataSource.initialize()
     .then(() => {
         console.log("Data Source has been initialized successfully!")
@@ -20,6 +18,6 @@ app.use(cors({origin: "*"}))
 
 app.use("/students", StudentRoute)
 
-app.listen(APP_PORT, () => {
-    console.log(`App starting and listening on http://localhost:${APP_PORT}`)
+app.listen(process.env.APP_SERVER_PORT || 3333, () => {
+    console.log('App is running')
 })
