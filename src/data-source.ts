@@ -1,6 +1,6 @@
 import dotenv from "dotenv"
 import { DataSource } from "typeorm";
-import {Student} from "./entity";
+import { Student } from "./entity";
 
 dotenv.config()
 
@@ -20,5 +20,11 @@ export const AppDataSource = new DataSource({
     subscribers: [],
     migrations: [
         __dirname + "migrations/**/*.ts"
-    ]
+    ],
+    extra: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }
 })
